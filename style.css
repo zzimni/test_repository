@@ -1,0 +1,309 @@
+* {
+  /* border-top: 10px solid #1098ad; */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #444;
+  font-family: sans-serif;
+
+  border-top: 10px solid #1098ad;
+}
+
+.main-header {
+  background-color: #f7f7f7;
+  /* padding: 20px;
+  padding-left: 40px;
+  padding-right: 40px; */
+  padding: 20px 40px;
+  margin-bottom: 60px;
+  height: 80px;
+}
+
+nav {
+  font-size: 18px;
+}
+
+article {
+  margin-bottom: 60px;
+}
+
+.post-header {
+  margin-bottom: 40px;
+}
+
+aside {
+  background-color: #f7f7f7;
+  border-top: 5px solid #1098ad;
+  border-bottom: 5px solid #1098ad;
+  /* padding-top: 50px;
+  padding-bottom: 50px; */
+  padding: 50px 0;
+  width: 500px;
+}
+
+h1,
+h2,
+h3 {
+  color: #1098ad;
+}
+
+h1 {
+  font-size: 26px;
+  text-transform: uppercase;
+  font-style: italic;
+  color: #1098ad;
+}
+
+h2 {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+h3 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+h4 {
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+p {
+  font-size: 22px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+ul,
+ol {
+  margin-left: 50px;
+  margin-bottom: 20px;
+}
+
+li {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+li:last-child {
+  margin-bottom: 0;
+}
+
+/* footer p {
+  font-size: 16px;
+} */
+
+/*article header p {
+  font-style: italic;
+}
+*/
+
+#author {
+  font-style: italic;
+  font-size: 18px;
+}
+
+#copyright {
+  font-size: 16px;
+}
+
+.related-author {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* ul {
+  list-style: none;
+} */
+
+.related {
+  list-style: none;
+}
+
+/* .first-li { 
+  font-weight: bold;
+}
+*/
+
+li:first-child {
+  font-weight: bold;
+}
+
+li:last-child {
+  font-style: italic;
+}
+
+li:nth-child(even) {
+  color: red;
+}
+/* Misconception: this won't work! */
+article p:first-child {
+  color: red;
+}
+
+/* Styling links */
+
+a:link {
+  color: #1098ad;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #1098ad;
+}
+
+a:hover {
+  color: orangered;
+  font-weight: bold;
+  text-decoration: underline orangered;
+}
+
+a:active {
+  background-color: black;
+  font-style: italic;
+}
+
+a {
+  color: red;
+}
+
+/* Resolving conflicst */
+
+#copyright {
+  color: red;
+}
+
+.copyright {
+  color: blue;
+}
+
+.text {
+  color: yellow;
+}
+
+.post-img {
+  width: 100%;
+  height: auto;
+}
+
+/* footer p {
+  color: green !important;
+} */
+
+/*
+[24. Styling Text]
+//font-family: 글꼴 지정하는 속성 (sans-serif는 돋움체)
+//text-transform: uppercase; - 다 대문자로 바꿔줌
+//p{~~}로 하면 모든 p에 적용되는 것
+//text-align: center; - 가운데 정렬
+//16 pixel이 default 인듯?
+
+[25. Combining Selectors]
+//selector 이름들을 콤마를 통해 나열한 다음 공통 속성을 고정시켜주면 됨
+//footer p 라고 하면 footer 안에 있는 p만 해당하게 하는 거
+//article header p라고 하면 article 안의 header안의 p만 해당하게 하는 거
+
+[26. Class and ID Selectors]
+//article header p는 너무 기니까 html에서 해당 문장에 author라는 id를 붙여주자
+//css에서는 #author 라고 쓰기만 하면 됨
+//주석처리하고싶은 부분 드래그한 다음 command+slash하면 됨(취소는 그 상태로 슬래쉬 한 번 더)
+//id는 중복 사용  안 됨. 하고싶으면 class를 사용해야함
+//ㄴhtml에서 <p class="related-author">By Matilda</p> 이런 식으로 써주고 같은 이름의 class의 애들끼리 같은 효과 적용됨
+//ㄴcss에서는 .related-authour{~(효과 내용)~} 로 쓰면 됨
+//list-style:none; - unordered list의 bullet point를 지워줌
+//(list-style:square;-리스트 bullet point를 네모로 바꿔줌)
+//id는 once만 쓸 수 있고 class는 multiple elements가 같은 이름을 쓸 수 있기 때문에 나중을 위해 항상 class를 쓴다
+
+[27. Working with Colors]
+//rgb(r,g,b)
+//rgb(255,0,0) :빨간색
+//rgb(0,255,0) :초록색
+//rgb(0,0,255) :파란색
+//rgb(255,255,255): 흰색
+//rgb(0,0,0): 검정색
+//rgb(0,255,255): 초록색+파란색
+//rgb(0,255,255,0.3): 마지막 숫자 - transparency
+//#00ffff -hexadecimal(16진법) notation 0~255 = 0~ff
+//#0ff - shorthand, when all colors are identical pairs
+//when colors inj all 3 channels are the same, we get a gre color
+//rgb(0,0,0) #000000 #000
+//rgb(69,69,69) #444444 #444
+//rgb(183,183,183) #b7b7b7
+//rgb(255,255,255) #ffffff #fff
+//색깔 네모 위에 커서 올려놓으면 색깔 고르는 창 뜸
+//같은 속성에 대해서 두 줄 이상 쓰면 마지막껄로 적용됨
+//background-color: 배경색
+//border: 테두리
+//border: 크기-5px 스타일-solid(선)/dashed(점선)/.. 색-#1098ad
+//border-top, border-bottom, border-left, border-right 로 나눠서 설정 가능
+
+[28. Pseudo-Classes]
+//li:first-child{~}: li elements that are the first child inside of its parent container 에게 ~라는 속성이 부여됨
+//li:last-child{~}: li 인데 (parent container의) 마지막 자식 리스트에게 ~라는 속성이 부여됨
+//li:nth-child(2){~}: 2번째 list에게 속성 부여
+//li:nth-child(odd){~}: 홀수번째 List에게 속성 부여
+//ㄴ얘네 할 때 :<-이거 꼭 붙여써야함
+//article p:first-child{~}: article의 첫번째 child가 P일 때만 실행됨. 여기선 header가 first child이기 때문에 실행x
+
+[29. Styling Hyperlinks]
+//a:link - href가 있는 a들을 타게팅
+//1. a:link 방문 전 링크 상태
+//2. a:visited 방문 후 링크 상태
+//3. a:hover 마우스 오버했을 때 링크 상태
+//4. a:active  클릭했을 때 링크 상태
+//ㄴ>LVHA
+
+[30. Using Chrome DevTools]
+//웹페이지에서 devtools 띄우기
+//1. 웹페이지 아무데나 우클릭->검사
+//2. 맥북 맨 위쪽에 커서 올리기->보기->개발자 정보->개발자 도구
+//3. option + command + i
+//검사하고싶은 부분 우클릭->검사 누르면 해당 부분에 대한 코드를 보여줌
+//코드 오른쪽에 styleㄴ-hov 클릭하면 내가 직접 실행하지 않아도 link/visited/hover/active 했을 때 어떻게 바뀌는 지 확인 가능함
+//요소-html, 스타일-css
+
+[31. CSS Theory #1: Confliccts Between Selector]
+//굿노트에 필기
+//CSS 태그 적용순서 우선순위
+//1. 속성값 뒤에 ! ...
+//2. 인라인 스타일(html 파일에서 스타일 직접 지정)로 적용되어 있는 속성
+//3. 선택자에 id가 쓰인 속성
+//4. class, attribute, pseudo-class로 지정한 속성
+//5. 태그 이름으로 지정한 속성
+//6. 부모 요소에 의해 상속된 속성
+//이때 만약 똑같은 선택자가 아래에 반복해서 나오면 이전의 것을 덮어쓰게 된다. 이전의 것을 덮어쓰지 않으려면 !important를 사용해 주어야 한다.
+//(두 가지가 똑같은 등급일 때, 가장 마지막으로 적용한 것이 가장 우선한다.)
+//#copyright > .text > .copyright > footer p
+//(id > 마지막에 적용한 클래스 > 그 전에 쓴 클래스 > 태그 이름으로 지정한 속성)
+//ㄴinspection에서 요소->스타일 들어가서 보면 나머지는 우선순위에서 밀려나서 줄 그어져있음
+//빨간색 체크 푸르면 다음 우선순위인 노란색 적용됨
+
+[32. CSS Theory #2: Inheritance and the Universal Selector]
+//*{~}: 모든 elements에 속성 부여
+//제대로 안 들었는데 ㄱㅊ을듯..? 모르는 거 생기면 다시 듣기
+
+[33. CHALLENGE #1]
+[34. CSS Theory #3: The CSS Box Model]
+//굿노트에 필기함
+
+[35. Using Margins and Paddings]
+//devtool-스타일 에서 마지막 칸에 elements-padding-border-margin 그림으로 확인 가능
+//padding, padding-top, padding-bottom, padding-left, padding-right
+//padding: 20px 40px; == padding-top: 20px; padding-bottom:20px; padding-left: 40px; padding-right:40px;
+//Collapsing margins 현상: 위쪽 컨텐츠의 margin-bottom이 15 이고 아랫쪽 컨텐츠의 margin-top이 40일 때 총 margin은 55가 아니라 40이 됨
+//ㄴ(둘 중 더 큰 값의 Margin이 선택돼서 화면에 표시됨)
+
+[36. Adding Dimensions]
+//width를 css에서 바꿔줬을 때 html에서 적용한 width-height의 비율에 맞게 height도 바꿔주려먼 height:auto 로 작성해주면 된다
+//width를 n%로 설정하면 웹페이지 화면 너비의 n%의 너비가 적용되는 것. 100%로 하면 웹페이지에 꽉 차게 적용됨
+//ㄴ화면 크기 늘이고 줄일 때 크기가 그 비율에 맞게 같이 조절됨
+
+[37. Centering our Page]
+
+
+*/
